@@ -3,7 +3,7 @@ const cardsRow = document.getElementById("cards-row");
 
 // DEFINIZIONE VARIABILI
 // endpoint della chiamata AJAX
-let endpoint = "https://lanciweb.github.io/demo/api/pictures/"
+let endpoint = "https://lanciweb.github.io/demo/api/pictures/";
 
 // DEFINIZIONE FUNZIONI
 // funzione per creare la singola card
@@ -24,22 +24,48 @@ const createCard = (obj) => {
                 </div>`
 
   return card;                
-}
+};
 
 // funzione per renderizzare il contenuto di cards-row
 const renderCards = (array) => {
   let showedCards = "";
   array.forEach(item => {
     showedCards += createCard(item);
-  })
+  });
   cardsRow.innerHTML = showedCards;
-}
+};
 
 // CORPO DEL PROGRAMMA
 // Chiamata AJAX
 axios.get(endpoint).then(res => {
+  // stampa di controllo
   console.log("response:", res.data);
+
+  // chiamo la funzione renderCards e le passo i data della risposta della chiamata
   renderCards(res.data);
-})
 
+  // recupero le immagini dal DOM
+  const cardImg = document.querySelectorAll(".card-img");
+  // recupero l'overlay dal DOM
+  const overlay = document.querySelector(".overlay");
+  // recupero il contenitore dell'immagine in overlay
+  const overlayImg = document.querySelector(".overlay-content");
+  // recupero il bottone di chiusura dal DOM
+  const closeBtn = document.getElementById("close-btn");
+  // stampa di controllo
+  console.log("cardImg",cardImg);
+  console.log("overlay", overlay);
 
+  // EventListener al click di ogni immagine per mostrare l'overlay con la suddetta
+  cardImg.forEach(image => {
+    image.addEventListener("click", () =>{
+      overlay.classList.remove("hidden");
+      overlayImg.innerHTML += `<img src=${image.src}>`;
+      // EventListener per chiudere l'overlay
+      closeBtn.addEventListener("click", () => {
+        overlayImg.innerHTML = "";
+        overlay.classList.add("hidden");
+      });
+    });
+  });
+});

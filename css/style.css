@@ -1,13 +1,21 @@
+/* COMMONS */
+h1, h6{
+  font-family: "Edu TAS Beginner", sans-serif;
+}
 
+.card,
+.card-img{
+  border-radius: 0;
+  padding: 5px;
+}
 
+/* TITLE */
 #title-row{
   background-image: url(../img/wall.png);
   background-size: contain;
 }
 
-h1, h6{
-  font-family: "Edu TAS Beginner", sans-serif;
-}
+/* CARDS */
 
 #cards-row{
   background-image: url(../img/cork.png);
@@ -18,12 +26,6 @@ h1, h6{
 .card{
   margin-bottom: 1.5rem;
   position: relative;
-}
-
-.card,
-.card-img{
-  border-radius: 0;
-  padding: 5px;
 }
 
 .card-content{
@@ -47,4 +49,52 @@ h1, h6{
 
 .pin img{
   width: 100%;
+}
+
+/* HOVER */
+.card-img:hover{
+  cursor: pointer;
+}
+
+/* OVERLAY */
+.hidden{
+  display: none;
+}
+
+.overlay-content{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(128, 128, 128, 0.9);
+  padding: 5%;
+}
+
+.overlay-content img{
+  height: 100%;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.5); 
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+#close-btn{
+  position: absolute;
+  top: 20px;
+  right: 80px; 
+  font-size: 2rem; 
+  color: #444;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  z-index: 3;
+}
+
+#close-btn:hover{
+  cursor: pointer;
+  color: #fff;
+}
+
+#close-btn:focus{
+
 }
