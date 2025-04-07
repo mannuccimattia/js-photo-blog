@@ -1,0 +1,42 @@
+
+
+#title-row{
+  background-image: url(../img/wall.png);
+  background-size: contain;
+}
+
+h1{
+  font-family: "Edu TAS Beginner", sans-serif;
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+#cards-row{
+  background-image: url(../img/cork.png);
+  background-size: contain;
+  padding: 2.5% 12.5%;
+}
+
+.card{
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.card,
+.card-img{
+  border-radius: 0;
+  padding: 5px;
+}
+
+.pin{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.pin img{
+  width: 100%;
+}
