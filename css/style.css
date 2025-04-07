@@ -5,8 +5,11 @@
   background-size: contain;
 }
 
-h1{
+h1, h4{
   font-family: "Edu TAS Beginner", sans-serif;
+}
+
+h1{
   font-size: 6rem;
   font-weight: 700;
 }
@@ -26,6 +29,15 @@ h1{
 .card-img{
   border-radius: 0;
   padding: 5px;
+}
+
+.card-body h4{
+  font-size: 2rem;
+}
+
+.card-body p{
+  font-family: "Sometype Mono", monospace;
+  font-size: 1rem;
 }
 
 .pin{
