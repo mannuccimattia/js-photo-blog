@@ -20,13 +20,13 @@ h1, h6{
 #cards-row{
   background-image: url(../img/cork.png);
   background-size: contain;
-  padding: 2.5% 12.5%;
+  padding: 6.25% 12.5%;
 }
 
 .card{
   margin-bottom: 1.5rem;
   position: relative;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 .card-content{
