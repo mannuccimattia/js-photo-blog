@@ -71,6 +71,13 @@ h1, h6{
   padding: 5%;
 }
 
+.overlay-image-wrapper {
+  max-width: 80vh;
+  max-height: 80vh;
+  position: relative;
+  display: inline-block;
+}
+
 .overlay-content img{
   max-width: 100%;
   max-height: 100%;
@@ -82,8 +89,8 @@ h1, h6{
 
 #close-btn{
   position: absolute;
-  top: 20px;
-  right: 20px; 
+  top: 10px;
+  right: 10px; 
   font-size: 2rem; 
   color: #444;
   margin: 0;
@@ -95,8 +102,4 @@ h1, h6{
 #close-btn:hover{
   cursor: pointer;
   color: #fff;
-}
-
-#close-btn:focus{
-
 }

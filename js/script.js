@@ -23,7 +23,7 @@ const createCard = (obj) => {
                   </div>
                 </div>`
 
-  return card;                
+  return card;
 };
 
 // funzione per renderizzare il contenuto di cards-row
@@ -49,23 +49,29 @@ axios.get(endpoint).then(res => {
   // recupero l'overlay dal DOM
   const overlay = document.querySelector(".overlay");
   // recupero il contenitore dell'immagine in overlay
-  const overlayImg = document.querySelector(".overlay-content");
-  // recupero il bottone di chiusura dal DOM
-  const closeBtn = document.getElementById("close-btn");
+  const overlayContent = document.querySelector(".overlay-content");
+
   // stampa di controllo
-  console.log("cardImg",cardImg);
+  console.log("cardImg", cardImg);
   console.log("overlay", overlay);
 
   // EventListener al click di ogni immagine per mostrare l'overlay con la suddetta
   cardImg.forEach(image => {
-    image.addEventListener("click", () =>{
+    image.addEventListener("click", () => {
       overlay.classList.remove("hidden");
-      overlayImg.innerHTML += `<img src=${image.src}>`;
-      // EventListener per chiudere l'overlay
-      closeBtn.addEventListener("click", () => {
-        overlayImg.innerHTML = "";
+
+      overlayContent.innerHTML = `<div class="overlay-image-wrapper">
+                          <img src="${image.src}" alt="Enlarged image">
+                          <div id="close-btn">
+                            <i class="fa-regular fa-rectangle-xmark"></i>
+                          </div>
+                        </div>`;
+      const closeBtn = document.getElementById("close-btn");
+
+      closeBtn.addEventListener("click", () =>{
         overlay.classList.add("hidden");
-      });
+        overlayContent.innerHTML = "";
+      })
     });
   });
 });
