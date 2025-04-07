@@ -24,7 +24,8 @@ h1, h6{
 }
 
 .card{
-  margin-bottom: 1.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
   position: relative;
   transition: 0.4s;
 }
