@@ -14,8 +14,8 @@ const createCard = (obj) => {
                   <div class="card">
                     <img src="${url}" class="card-img" alt="${id}">
                     <div class="card-content">
-                      <h6 class="display-6 fs-2 fw-medium">${title}</h6>
                       <p>${date}</p>
+                      <h6 class="display-6 fs-2 fw-semibold">${title}</h6>
                     </div>
                     <div class="pin">
                       <img src="./img/pin.svg" alt="pin">
