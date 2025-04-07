@@ -10,11 +10,11 @@ let endpoint = "https://lanciweb.github.io/demo/api/pictures/"
 const createCard = (obj) => {
   const { id, title, date, url } = obj;
 
-  const card = `<div class="col-4">
+  const card = `<div class="col-12 col-md-6 col-lg-4">
                   <div class="card">
                     <img src="${url}" class="card-img" alt="${id}">
-                    <div class="card-body">
-                      <h4>${title}</h4>
+                    <div class="card-content">
+                      <h6 class="display-6 fs-2 fw-medium">${title}</h6>
                       <p>${date}</p>
                     </div>
                     <div class="pin">
