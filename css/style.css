@@ -26,6 +26,7 @@ h1, h6{
 .card{
   margin-bottom: 1.5rem;
   position: relative;
+  transition: 0.3s;
 }
 
 .card-content{
@@ -45,6 +46,7 @@ h1, h6{
   top: 0;
   left: 50%;
   translate: -50% -50%;
+  z-index: 1;
 }
 
 .pin img{
@@ -52,8 +54,20 @@ h1, h6{
 }
 
 /* HOVER */
-.card-img:hover{
+.card:hover{
   cursor: pointer;
+  scale: 1.2;
+  z-index: 3;
+  rotate: 10deg;
+}
+
+.card:hover .pin{
+  display: none;
+}
+
+#close-btn:hover{
+  cursor: pointer;
+  color: #fff;
 }
 
 /* OVERLAY */
@@ -69,6 +83,7 @@ h1, h6{
   left: 0;
   background-color: rgba(128, 128, 128, 0.9);
   padding: 5%;
+  z-index: 5;
 }
 
 .overlay-image-wrapper {
@@ -96,10 +111,9 @@ h1, h6{
   margin: 0;
   padding: 0;
   line-height: 0;
-  z-index: 3;
+  z-index: 5;
 }
 
-#close-btn:hover{
-  cursor: pointer;
-  color: #fff;
+#close-btn i{
+  text-shadow: 0 0 2px #fff;
 }
